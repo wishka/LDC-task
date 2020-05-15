@@ -203,3 +203,16 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* Table*/
+table{
+  vertical-align: middle;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+}
+th{
+  width: 25%;
+}
+
+/* Radio-buttons*/

@@ -1,15 +1,9 @@
 <% if logged_in? %>
-<div class="row">
-    <aside class="col-md-4">
-      <section class="#">
 
-      </section>
+<div class="row" id="trow">
 
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
+      <%= render 'layouts/table' %>
 
-    </div>
   </div>
 <% else %>
 
