@@ -1,13 +1,11 @@
 
 <% @products.each do |i| %>
-        <div class="col-md-4 about-left">
-          <figure class="effect-bubba">
-            <table>
-              <tr><%= image_tag i.path_to_image %></tr> | <tr><%= i.title %></tr>
-              <tr><%= i.discribe %></tr> |  <tr><%= i.price %></tr>
-            </table>
-          </figure>
-        </div>
-        <% end %>
-
-<%= @products.category_id(1) %>
+  <div class="col-md-4 about-left">
+    <figure class="effect-bubba">
+      <table>
+        <tr><%= image_tag i.path_to_image %></tr> | <tr><%= i.title %></tr>
+        <tr><%= i.discribe %></tr> |  <tr><%= i.price %></tr>
+      </table>
+    </figure>
+  </div>
+<% end %>
