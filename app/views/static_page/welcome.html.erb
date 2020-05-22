@@ -2,20 +2,16 @@
 
 <div class="row" id="trow">
 
-      <%= render 'layouts/table' %>
-
+<%= render 'static_page/table' %>
+<div><button class="btn btn-sm btn-success" onClick="something()">Add to Cart</button></div>
   </div>
+
 <% else %>
 
 <div class="center jumbotron">
   <h1>Welcome aboard</h1>
 
-  <h2>
-
-
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 
 <%= link_to image_tag("LDC.jpg", alt: "LDC logo") %>

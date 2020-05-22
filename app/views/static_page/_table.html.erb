@@ -1,0 +1,40 @@
+<div class="row">
+  <div>
+    <%= link_to "Monday", monday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Tuesday", tuesday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Wednesday", wednesday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Thursday", thursday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Friday", friday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Saturday", saturday_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Sunday", sunday_path, class: "btn btn-lg btn-primary" %>
+  </div>
+</div>
+
+<h4>Today is <%= week_day %>, and our menu is: </h4>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th rowspan="3" scope="row">
+      <p>Make your oun mix!</p>
+      <p>You can choose:</p>
+      <p>1 main + 1 topping + 1 drink</p></th>
+      <td colspan="3">
+          <% if week_day == "Friday" %>
+          <%= render 'product/friday' %>
+          <% elsif week_day == "Saturday" %>
+          <%= render 'product/saturday' %>
+          <% elsif week_day == "Sanday"%>
+          <%= render 'product/sunday' %>
+          <% elsif week_day == "Monday"%>
+          <%= render 'product/monday' %>
+          <% elsif week_day == "Tuesday"%>
+          <%= render 'product/tuesday' %>
+          <% elsif week_day == "Wednesday"%>
+          <%= render 'product/wednesday' %>
+          <% elsif week_day == "Thursday"%>
+          <%= render 'product/thursday' %>
+          <% end %>
+        </td>
+    </tr>
+  </tbody>
+</table>
