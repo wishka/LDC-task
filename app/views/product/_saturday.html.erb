@@ -1,0 +1,38 @@
+<h3>Saturday menu!</h3>
+<table class="tfood">
+  <td>
+    <p><b>Main</b></p>
+  </td>
+  <td>
+    <p><b>Topping</b></p>
+  </td>
+  <td>
+    <p><b>Drink</b></p>
+  </td>
+  <tr>
+    <td>
+   <%= link_to image_tag("Hamburger4.jpg", alt: "Hamburger") %>
+     <input name="main" type="radio" value="Hamburger4">
+    <%= link_to image_tag("Hamburger5.jpg", alt: "Hamburger") %>
+     <input name="main" type="radio" value="Hamburger5">
+     <%= link_to image_tag("Hamburger6.jpg", alt: "Hamburger") %>
+      <input name="main" type="radio" value="Hamburger6">
+  </td>
+    <td>
+   <%= link_to image_tag("icecream3.jpg", alt: "icecream") %>
+    <input name="topping" type="radio" value="icecream3">
+    <%= link_to image_tag("free2.jpg", alt: "Free") %>
+    <input name="topping" type="radio" value="free2">
+    <%= link_to image_tag("icecream.jpg", alt: "icecream") %>
+    <input name="topping" type="radio" value="icecream">
+</td>
+  <td>
+    <%= link_to image_tag("cola.jpg", alt: "cola") %>
+     <input name="drink" type="radio" value="cola">
+     <%= link_to image_tag("fanta.jpg", alt: "fanta") %>
+     <input name="drink" type="radio" value="fanta">
+     <%= link_to image_tag("sprite.jpg", alt: "sprite") %>
+     <input name="drink" type="radio" value="sprite">
+</td>
+</tr>
+</table>
