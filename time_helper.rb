@@ -4,4 +4,4 @@ arr_time = {'1' => 'Monday', '2' => 'Thueday', '3' => 'Wednesday', '4' => 'Thurs
          '6' => 'Saturday', '7' => 'Sunday'}
 week_day = time.wday.to_s
 
-to_day = arr_time[week_day]
+arr_time[week_day]
