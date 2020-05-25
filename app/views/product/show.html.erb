@@ -1,33 +1,5 @@
+<div class="row" id="trow">
 
-<% @products.each do |i| %>
-  <div class="col-md-4 about-left">
-    <figure class="effect-bubba">
-      <table>
-        <tr><%= image_tag i.path_to_image %></tr> | <tr><%= i.title %></tr>
-        <tr><%= i.discribe %></tr> |  <tr><%= i.price %></tr>
-      </table>
-    </figure>
+<%= render 'static_page/table' %>
+<div><button class="btn btn-sm btn-success" onClick="something()">Add to Cart</button></div>
   </div>
-<% end %>
-
-<% @products2.each do |i| %>
-  <div class="col-md-4 about-left">
-    <figure class="effect-bubba">
-      <table>
-        <tr><%= image_tag i.path_to_image %></tr> | <tr><%= i.title %></tr>
-        <tr><%= i.discribe %></tr> |  <tr><%= i.price %></tr>
-      </table>
-    </figure>
-  </div>
-<% end %>
-
-<% @products3.each do |i| %>
-  <div class="col-md-4 about-left">
-    <figure class="effect-bubba">
-      <table>
-        <tr><%= image_tag i.path_to_image %></tr> | <tr><%= i.title %></tr>
-        <tr><%= i.discribe %></tr> |  <tr><%= i.price %></tr>
-      </table>
-    </figure>
-  </div>
-<% end %>

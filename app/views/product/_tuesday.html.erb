@@ -1,38 +1,57 @@
 <h3>Tuesday menu!</h3>
+<div class="col-md-4 about-left">
 <table class="tfood">
-  <td>
-    <p><b>Main</b></p>
-  </td>
-  <td>
-    <p><b>Topping</b></p>
-  </td>
-  <td>
-    <p><b>Drink</b></p>
-  </td>
-  <tr>
-    <td>
-   <%= link_to image_tag("Hamburger.jpg", alt: "Hamburger") %>
-    <input name="main" type="radio" value="Hamburger1">
-    <%= link_to image_tag("Hamburger2.jpg", alt: "Hamburger") %>
-     <input name="main" type="radio" value="Hamburger2">
-     <%= link_to image_tag("Hamburger3.jpg", alt: "Hamburger") %>
-      <input name="main" type="radio" value="Hamburger3">
-  </td>
-    <td>
-   <%= link_to image_tag("free.jpg", alt: "Free") %>
-    <input name="topping" type="radio" value="free">
-    <%= link_to image_tag("free2.jpg", alt: "Free") %>
-    <input name="topping" type="radio" value="free2">
-    <%= link_to image_tag("free3.jpg", alt: "Free") %>
-    <input name="topping" type="radio" value="free3">
+<td>
+  <p><b>Main</b></p>
 </td>
-  <td>
-    <%= link_to image_tag("cola.jpg", alt: "cola") %>
-     <input name="drink" type="radio" value="cola">
-     <%= link_to image_tag("fanta.jpg", alt: "fanta") %>
-     <input name="drink" type="radio" value="fanta">
-     <%= link_to image_tag("sprite.jpg", alt: "sprite") %>
-     <input name="drink" type="radio" value="sprite">
+<% @products.each do |i| %>
+<tr>
+ <td><%= i.title %>
+ <%= image_tag i.path_to_image %></td>
+
+ <td><%= i.discribe %>
+ <p><b>Price: <%= i.price %></b></p>
+ <input name="main" type="radio" value="">
 </td>
 </tr>
+<% end %>
 </table>
+</div>
+
+<div class="col-md-4 about-left">
+<table class="tfood">
+<td>
+<p><b>Topping</b></p>
+</td>
+<% @products2.each do |i| %>
+<tr>
+<td><%= i.title %>
+<%= image_tag i.path_to_image %></td>
+
+<td><%= i.discribe %>
+<p><b>Price: <%= i.price %></b></p>
+<input name="topping" type="radio" value="">
+</td>
+</tr>
+<% end %>
+</table>
+</div>
+
+<div class="col-md-4 about-left">
+<table class="tfood">
+<td>
+<p><b>Drink</b></p>
+</td>
+<% @products3.each do |i| %>
+<tr>
+<td><%= i.title %>
+<%= image_tag i.path_to_image %></td>
+
+<td><%= i.discribe %>
+<p><b>Price: <%= i.price %></b></p>
+<input name="drink" type="radio" value="">
+</td>
+</tr>
+<% end %>
+</table>
+</div>
