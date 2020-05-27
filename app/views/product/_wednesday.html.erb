@@ -7,6 +7,7 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
+    <input type="hidden" <%= i.menu_id %> >
     <td><b>Price: <%= i.price %></b>
     <input type="radio" name="main" value="main"></td>
     <% end %>
@@ -23,6 +24,7 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
+    <input type="hidden" <%= i.menu_id %>>
     <td><b>Price: <%= i.price %></b>
     <input type="radio" name="topping" value="topping"></td>
     <% end %>
@@ -39,6 +41,7 @@
       <td><b><%= i.title %></b>
       <%= image_tag i.path_to_image %></td>
       <td><i><%= i.discribe %></i></td>
+      <input type="hidden" <%= i.menu_id %>>
       <td><b>Price: <%= i.price %></b>
       <input type="radio" name="drink" value="drink"></td>
       <% end %>
@@ -52,8 +55,8 @@
 </form>
 
 <script>
-  function add_to_cart(id){
-    var x = window.localStorage.getItem(id);
+  function add_to_cart(menu_id){
+    var x = window.localStorage.getItem(menu_id);
     x = x * 1 + 1;
-    window.localStorage.setItem(id, x);}
+    window.localStorage.setItem(menu_id, x);}
 </script>

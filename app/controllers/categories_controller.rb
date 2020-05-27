@@ -5,47 +5,63 @@ class CategoriesController < ApplicationController
   def new
   end
 
-  def show
-    @products = Product.where("category_id = 1")
-  end
+  def index
+        categories = Category.left_outer_joins(:products)
+                            .select('categories.id, categories.name, COUNT(products.id) AS products_count')
+                            .group('categories.id, categories.name')
+        render json: categories, status: :ok
+    end
 
   def edit
   end
 
+  def show
+        category = find_category(params[:id])
+        render json: category, status: :ok
+    end
+
   def create
-     @product = Product.new(product_params)
-     if @product.save
-       flash[:info] = "You successfully create a new product!"
-       redirect_to root_url
-     else
-       render 'new'
-     end
-   end
+        category = Category.new(cat_params)
+        if category.save
+            category = find_category(category.id)
+            render json: category, status: 201
+        else
+            # Что-то пошло не так
+            render json: {errors: category.errors}, status: :unprocessable_entity
+        end
+    end
 
-     def update
-       if @product.update_attributes(product_params)
-         flash[:success] = "Product updated"
-         redirect_to @product
-       else
-         render 'edit'
-       end
-     end
+    def update
+        category = Category.find(params[:id])
+        if category.update_attributes(cat_params)
+            render json: category, status: :ok
+        else
+            # Что-то пошло не так
+            render json: {errors: category.errors}, status: :unprocessable_entity
+        end
+    end
 
-     def destroy
-       Product.find(params[:id]).destroy
-       flash[:success] = "Product deleted"
-       redirect_to root_url
-     end
+    def destroy
+        category = Category.find(params[:id])
+        category.destroy
+        render json: category, status: 204
+    end
 
-  # Подтверждает администратора.
+    private
+
+    def cat_params
+        params.require(:category).permit(:name)
+    end
+    def find_category id
+        Category.left_outer_joins(:products)
+                            .select('categories.id, categories.name, COUNT(products.id) AS products_count')
+                            .where(id: id)
+                            .group('categories.id, categories.name')
+    end
+
+    # Подтверждает администратора.
   def admin_user
     redirect_to(root_url) unless current_user.admin?
-  end
-
-  private
-
-  def product_params
-    params.require(:product).permit(:category_id, :menu_id, :title, :discribe, :price, :path_to_image)
   end
 
 end

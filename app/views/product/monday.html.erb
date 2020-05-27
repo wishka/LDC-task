@@ -1,59 +1,54 @@
 <h3>Monday menu!</h3>
 
+<form>
   <div class="col-md-4 about-left">
-  <table class="tfood">
-  <td>
-    <p><b>Main</b></p>
-  </td>
-  <% @products.each do |i| %>
-  <tr>
-   <td><%= i.title %>
-   <%= image_tag i.path_to_image %></td>
+    <div class="tfood">
+      <p><b>Main</b></p>
+    <table><% @products.each do |i| %>
+      <tr>
+    <td><b><%= i.title %></b>
+    <%= image_tag i.path_to_image %></td>
+    <td><i><%= i.discribe %></i></td>
+    <input type="hidden" <%= i.menu_id %> >
+    <td><b>Price: <%= i.price %></b>
+    <input type="radio" name="main" value="main"></td>
+    <% end %>
+    </tr>
+    </table>
+  </div>
+  </div>
 
-   <td><%= i.discribe %>
-   <p><b>Price: <%= i.price %></b></p>
-   <input name="main" type="radio" value="">
-  </td>
-  </tr>
-  <% end %>
-  </table>
-</div>
+  <div class="col-md-4 about-left">
+    <div class="tfood">
+      <p><b>Topping</b></p>
+    <table><% @products2.each do |i| %>
+      <tr>
+    <td><b><%= i.title %></b>
+    <%= image_tag i.path_to_image %></td>
+    <td><i><%= i.discribe %></i></td>
+    <input type="hidden" <%= i.menu_id %>>
+    <td><b>Price: <%= i.price %></b>
+    <input type="radio" name="topping" value="topping"></td>
+    <% end %>
+    </tr>
+    </table>
+  </div>
+  </div>
 
-<div class="col-md-4 about-left">
-<table class="tfood">
-<td>
-  <p><b>Topping</b></p>
-</td>
-<% @products2.each do |i| %>
-<tr>
- <td><%= i.title %>
- <%= image_tag i.path_to_image %></td>
-
- <td><%= i.discribe %>
- <p><b>Price: <%= i.price %></b></p>
- <input name="topping" type="radio" value="">
-</td>
-</tr>
-<% end %>
-</table>
-</div>
-
-<div class="col-md-4 about-left">
-<table class="tfood">
-<td>
-  <p><b>Drink</b></p>
-</td>
-<% @products3.each do |i| %>
-<tr>
- <td><%= i.title %>
- <%= image_tag i.path_to_image %></td>
-
- <td><%= i.discribe %>
- <p><b>Price: <%= i.price %></b></p>
- <input name="drink" type="radio" value="">
-</td>
-</tr>
-<% end %>
-
-</table>
-</div>
+    <div class="col-md-4 about-left">
+      <div class="tfood">
+        <p><b>Drink</b></p>
+      <table><% @products3.each do |i| %>
+        <tr>
+      <td><b><%= i.title %></b>
+      <%= image_tag i.path_to_image %></td>
+      <td><i><%= i.discribe %></i></td>
+      <input type="hidden" <%= i.menu_id %>>
+      <td><b>Price: <%= i.price %></b>
+      <input type="radio" name="drink" value="drink"></td>
+      <% end %>
+      </tr>
+      </table>
+    </div>
+  </div>
+</form>
