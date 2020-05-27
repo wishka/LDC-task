@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   has_many :products
+  has_many :menu_id
 
   def new
   end

@@ -1,5 +1,11 @@
 <div class="row" id="trow">
 
 <%= render 'static_page/table' %>
-<button class="btn btn-success" onclick="something()">Add to Cart</button>
+<button class="btn btn-sm btn-success" onclick="add_to_cart()">Add to Cart</button>
   </div>
+  <script>
+    function add_to_cart(id){
+      var x = window.localStorage.getItem(id);
+      x = x * 1 + 1;
+      window.localStorage.setItem(id, x);}
+  </script>

@@ -1,6 +1,7 @@
 class ProductController < ApplicationController
   before_action :admin_user,     only: :edit
 
+
   def new
   end
 
@@ -33,7 +34,7 @@ class ProductController < ApplicationController
      end
 
      def destroy
-       Product.find(params[:id]).destroy
+       Product.find(params[:menu_id]).destroy
        flash[:success] = "Product deleted"
        redirect_to root_url
      end
@@ -95,7 +96,7 @@ class ProductController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:category_id, :menu_id, :title, :discribe, :price, :path_to_image)
+    params.permit(:category_id, :menu_id, :title, :discribe, :price, :path_to_image)
   end
 
 end

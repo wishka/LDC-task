@@ -53,5 +53,10 @@
 </td>
 </tr>
 <% end %>
+<button class="btn btn-sm btn-success" onclick="add_to_cart(<% @product.id %>)">Add to Cart</button>
+
 </table>
 </div>
+<div>
+<button class="btn btn-sm btn-success" onclick="add_to_cart(<% @products.ids %><% @products2.ids %><% @products3.ids %>)">Add to Cart</button>
+  </div>
