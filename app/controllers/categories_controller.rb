@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-        categories = Category.left_outer_joins(:products)
+        @categories = Category.left_outer_joins(:products)
                             .select('categories.id, categories.name, COUNT(products.id) AS products_count')
                             .group('categories.id, categories.name')
         render json: categories, status: :ok
@@ -16,14 +16,14 @@ class CategoriesController < ApplicationController
   end
 
   def show
-        category = find_category(params[:id])
+        @category = find_category(params[:id])
         render json: category, status: :ok
     end
 
   def create
-        category = Category.new(cat_params)
+        @category = Category.new(cat_params)
         if category.save
-            category = find_category(category.id)
+            @category = find_category(category.id)
             render json: category, status: 201
         else
             # Что-то пошло не так
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
     end
 
     def update
-        category = Category.find(params[:id])
+        @category = Category.find(params[:id])
         if category.update_attributes(cat_params)
             render json: category, status: :ok
         else
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
     end
 
     def destroy
-        category = Category.find(params[:id])
+        @category = Category.find(params[:id])
         category.destroy
         render json: category, status: 204
     end
