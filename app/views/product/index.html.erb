@@ -2,8 +2,9 @@
   <%= render 'static_page/table' %>
 </div>
 <script type="text/javascript">
-  function add_to_cart(id) {
-    var key = "username's mix(" + id + ")";
+
+  function add_to_cart(id, id2, id3) {
+    var key = "username's mix(" + id + "," + id2 + "," + id3 + ")";
     var x = window.localStorage.getItem(key);
     x++;
     window.localStorage.setItem(key, x);
@@ -27,7 +28,7 @@
       var key = window.localStorage.key(i); // получаем ключ
       var value = window.localStorage.getItem(key); //получаем значение
 
-      if(key.indexof("username's mix(" + id + ")") == 0){
+      if(key.indexof("username's mix(" + id + "," + id2 + "," + id3 + ")") == 0){
         cnt = cnt + value * 1;
       }
       return cnt;
@@ -42,7 +43,7 @@
       var key = window.localStorage.key(i); // получаем ключ
       var value = window.localStorage.getItem(key); //получаем значение
 
-      if(key.indexof("username's mix(" + id + ")") == 0){
+      if(key.indexof("username's mix(" + id + "," + id2 + "," + id3 + ")") == 0){
         orders = orders + key + "=" + value + ",";
       }
     }

@@ -8,10 +8,10 @@ class ProductController < ApplicationController
   end
 
   def index
-    @products = Product.all.limit(3)
+    @products = Product.where("category_id = 1").limit(3)
     @products2 = Product.where("category_id = 2").limit(3)
     @products3 = Product.where("category_id = 3")
-  
+    @all_products = (@products + @products2 + @products3)
   end
 
   def show
