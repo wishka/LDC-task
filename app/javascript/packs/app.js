@@ -1,15 +1,8 @@
-function something(){
-var x = window.localStorage.getItem('aaa')
-x++
-window.localStorage.setItem('aaa', x)
-  alert (x);
-}
-
 /* Фенкция для добавления товара в корзину и сохранения в локальном хранилище */
-function add_to_cart(id) {
-  var key = 'product_' + id;
+function add_to_cart(ids) {
+  var key = "username's mix(" + ids + ")";
   var x = window.localStorage.getItem(key);
-  x++
+  x++;
   window.localStorage.setItem(key, x);
 
   update_orders_input();
@@ -22,14 +15,14 @@ function update_orders_input() {
 }
 
 function update_orders_button() {
-  var text = 'Cart (' cart_get_number_of_items() + ')';
+  var text = cart_get_number_of_items();
   $('#orders_button').val(orders);
 }
 
 /* Получаем информацию о стоимости заказа*/
 function cart_get_number_of_items (){
   var cnt = 0;
-  for(var i = 0, i < window.localStorage..length; i++)
+  for(var i = 0; i < window.localStorage.length; i++)
   {
     var key = window.localStorage.key(i); // получаем ключ
     var value = window.localStorage.getItem(key); //получаем значение
@@ -44,7 +37,7 @@ function cart_get_number_of_items (){
 /* Получаем информацию о кол-ве заказов*/
 function cart_get_orders (){
   var cnt = "";
-  for(var i = 0, i < window.localStorage..length; i++)
+  for(var i = 0; i < window.localStorage.length; i++)
   {
     var key = window.localStorage.key(i); // получаем ключ
     var value = window.localStorage.getItem(key); //получаем значение

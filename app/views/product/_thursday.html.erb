@@ -1,4 +1,4 @@
-<h3>Thursday menu!</h3>
+<h3>Friday menu!</h3>
 <form>
   <div class="col-md-4 about-left">
     <div class="tfood">
@@ -10,7 +10,7 @@
     <td><i><%= i.discribe %></i></td>
     <input type="hidden" <%= i.menu_id %> >
     <td><b>Price: <%= i.price %></b>
-    <input type="radio" name="main" value="main"></td>
+    <input type="radio" name="main" value=<%= i.id %>></td>
     <% end %>
     </tr>
     </table>
@@ -27,7 +27,7 @@
     <td><i><%= i.discribe %></i></td>
     <input type="hidden" <%= i.menu_id %>>
     <td><b>Price: <%= i.price %></b>
-    <input type="radio" name="topping" value="topping"></td>
+    <input type="radio" name="topping" value=<%= i.id %></td>
     <% end %>
     </tr>
     </table>
@@ -44,20 +44,13 @@
       <td><i><%= i.discribe %></i></td>
       <input type="hidden" <%= i.menu_id %>>
       <td><b>Price: <%= i.price %></b>
-      <input type="radio" name="drink" value="drink"></td>
+      <input type="radio" name="drink" value=<%= i.id %></td>
       <% end %>
       </tr>
       </table>
     </div>
-    </div>
-  <div>
-    <button class="btn btn-md btn-success" type="submit" onclick="add_to_cart()">Add to Cart</button>
   </div>
+<div>
+  <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
+</div>
 </form>
-
-<script>
-  function add_to_cart(menu_id){
-    var x = window.localStorage.getItem(menu_id);
-    x = x * 1 + 1;
-    window.localStorage.setItem(menu_id, x);}
-</script>

@@ -1,0 +1,12 @@
+<form>
+  <div class="col-md-8 about-left">
+    <div class="tfood">
+      <% @products.each do |i| %>
+      <p><%= i.title %>
+      <%= image_tag i.path_to_image %>
+      <%= i.discribe %>
+      <%= i.price %> <%= i.menu_id %></p>
+      <% end %>
+    </div>
+  </div>
+</form>

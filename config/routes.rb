@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'categories/new'
-  get 'product/show'
+  get 'products/show'
+  get 'product/index'
   get 'product/edit'
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :categories do
-    resources :products
-  end
+  resources :categories
+  resources :products
+
 end
