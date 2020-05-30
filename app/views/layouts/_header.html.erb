@@ -22,7 +22,9 @@
                   </li>
                 </ul>
               </li>
-              <li><%= link_to "Cart(...)",   cart_path %></li>
+              <li id="orders_button"><%= link_to "Cart(...)",   cart_path %>
+                <input id="orders_input" name="orders" type="hidden" />
+              </li>
             <% else %>
             <li><%= link_to "Log in", login_path %></li>
             <% end %>

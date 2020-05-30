@@ -8,7 +8,6 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
-    <input type="hidden" <%= i.menu_id %> >
     <td><b>Price: <%= i.price %></b>
     <input type="radio" name="main" value=<%= i.id %>></td>
     <% end %>
@@ -25,7 +24,6 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
-    <input type="hidden" <%= i.menu_id %>>
     <td><b>Price: <%= i.price %></b>
     <input type="radio" name="topping" value=<%= i.id %>></td>
     <% end %>
@@ -42,7 +40,6 @@
       <td><b><%= i.title %></b>
       <%= image_tag i.path_to_image %></td>
       <td><i><%= i.discribe %></i></td>
-      <input type="hidden" <%= i.menu_id %>>
       <td><b>Price: <%= i.price %></b>
       <input type="radio" name="drink" value=<%= i.id %>></td>
       <% end %>

@@ -1,4 +1,4 @@
-<h3>Friday menu!</h3>
+<h3>Saturday menu!</h3>
 <form>
   <div class="col-md-4 about-left">
     <div class="tfood">
@@ -8,13 +8,11 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
-    <input type="hidden" <%= i.menu_id %> >
     <td><b>Price: <%= i.price %></b>
-    <input type="radio" name="main" value=<%= i.id %> ></td>
+    <input type="radio" name="main" value=<%= i.id %>></td>
     <% end %>
     </tr>
     </table>
-    <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
   </div>
   </div>
 
@@ -26,13 +24,11 @@
     <td><b><%= i.title %></b>
     <%= image_tag i.path_to_image %></td>
     <td><i><%= i.discribe %></i></td>
-    <input type="hidden" <%= i.menu_id %>>
     <td><b>Price: <%= i.price %></b>
     <input type="radio" name="topping" value=<%= i.id %>></td>
     <% end %>
     </tr>
     </table>
-    <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
   </div>
   </div>
 
@@ -44,23 +40,14 @@
       <td><b><%= i.title %></b>
       <%= image_tag i.path_to_image %></td>
       <td><i><%= i.discribe %></i></td>
-      <input type="hidden" <%= i.menu_id %>>
       <td><b>Price: <%= i.price %></b>
       <input type="radio" name="drink" value=<%= i.id %>></td>
       <% end %>
       </tr>
       </table>
-      <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
     </div>
   </div>
 <div>
   <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
 </div>
 </form>
-
-<% @a = Product.find(1) %>
-<%= @a.title %>
-<%= image_tag @a.path_to_image %>
-<%= @a.discribe %>
-<%= @a.price %>
-<%= @a.id %>
