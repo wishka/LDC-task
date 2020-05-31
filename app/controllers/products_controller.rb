@@ -1,4 +1,4 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
   before_action :admin_user,     only: :edit
   require 'pry'
 
@@ -15,10 +15,11 @@ class ProductController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @products = Product.all
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def create
