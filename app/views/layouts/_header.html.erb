@@ -18,7 +18,7 @@
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                   <% if current_user.admin? %>
                   <li><%= link_to "Edit menu", products_show_path %></li>
-                  <li><%= link_to "Orders",   orders_path %></li>
+                  <li><%= link_to "Orders",   orders_show_path %></li>
                   <% end %>
                   <li class="divider"></li>
                   <li>

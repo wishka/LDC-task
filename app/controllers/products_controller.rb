@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :admin_user,     only: :edit
   before_action :set_product, only: [:edit, :update]
+
   require 'pry'
 
 
