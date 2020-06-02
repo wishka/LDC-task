@@ -1,0 +1,19 @@
+<%= form_for(@product) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price, class: 'form-control' %>
+
+  <%= f.label :discribe %>
+  <%= f.text_field :discribe, class: 'form-control' %>
+
+  <%= f.label :category %>
+  <%= f.number_field :category, class: 'form-control' %>
+
+  <%= f.label :image %>
+  <%= f.file_field :path_to_image, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

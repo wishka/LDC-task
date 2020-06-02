@@ -21,19 +21,19 @@
       <p>1 main + 1 topping + 1 drink</p></th>
       <td colspan="3">
           <% if week_day == "Friday" %>
-          <%= render 'product/friday' %>
+          <%= render 'products/friday' %>
           <% elsif week_day == "Saturday" %>
-          <%= render 'product/saturday' %>
+          <%= render 'products/saturday' %>
           <% elsif week_day == "Sunday"%>
-          <%= render 'product/sunday' %>
+          <%= render 'products/sunday' %>
           <% elsif week_day == "Monday"%>
-          <%= render 'product/monday' %>
+          <%= render 'products/monday' %>
           <% elsif week_day == "Tuesday"%>
-          <%= render 'product/tuesday' %>
+          <%= render 'products/tuesday' %>
           <% elsif week_day == "Wednesday"%>
-          <%= render 'product/wednesday' %>
+          <%= render 'products/wednesday' %>
           <% elsif week_day == "Thursday"%>
-          <%= render 'product/thursday' %>
+          <%= render 'products/thursday' %>
           <% end %>
         </td>
     </tr>
