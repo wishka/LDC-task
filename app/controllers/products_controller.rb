@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :admin_user,     only: :edit
+  before_action :set_product, only: [:edit, :update]
+
   require 'pry'
 
 
@@ -35,7 +37,7 @@ class ProductsController < ApplicationController
      def update
        if @product.update_attributes(product_params)
          flash[:success] = "Product updated"
-         redirect_to @product
+         redirect_to 'show'
        else
          render 'edit'
        end
@@ -105,6 +107,10 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:category_id, :menu_id, :title, :discribe, :price, :path_to_image)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end

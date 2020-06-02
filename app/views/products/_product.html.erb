@@ -1,6 +1,6 @@
 <li>
   <% if current_user.admin? %>
-  <%= link_to product.title, edit_product_path %>
-    | <%= link_to "edit", edit_product_path %>
+  <%= link_to product.title, edit_product_path(product) %>
+    | <%= link_to "edit", edit_product_path(product) %>
   <% end %>
 </li>

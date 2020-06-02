@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/show'
   get 'password_resets/new'
   get 'password_resets/edit'
   root             'static_page#welcome'
@@ -13,12 +14,13 @@ Rails.application.routes.draw do
   get 'help'            => 'static_page#help'
   get 'about'           => 'static_page#about'
   get 'contact'         => 'static_page#contact'
-  get 'orders'          => 'static_page#orders'
+  get 'orders'          => 'orders#show'
   get 'signup'          => 'users#new'
   get    'login'        => 'sessions#new'
   post   'login'        => 'sessions#create'
   delete 'logout'       => 'sessions#destroy'
   get 'cart'            => 'cart#index'
+  get 'products/show'
 
   resources :users
   resources :account_activations, only: [:edit]
