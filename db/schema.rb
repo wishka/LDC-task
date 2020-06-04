@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_06_01_031256) do
 
-  create_table "categories", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -29,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_06_01_031256) do
     t.integer "price"
     t.string "discribe"
     t.string "path_to_image"
-    t.integer "orders_id"
+    t.bigint "orders_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["orders_id"], name: "index_products_on_orders_id"
