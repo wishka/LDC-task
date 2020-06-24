@@ -111,6 +111,7 @@ GEM
     execjs (2.7.0)
     faker (2.12.0)
       i18n (>= 1.6, < 2)
+    ffi (1.13.0)
     ffi (1.13.0-x64-mingw32)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -270,28 +271,27 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    msgpack (1.3.3)
     msgpack (1.3.3-x64-mingw32)
     multi_json (1.14.1)
     nenv (0.3.0)
     nio4r (2.5.2)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.9.0)
-      byebug (~> 11.0)
-      pry (~> 0.13.0)
-    pry-rails (0.3.9)
-      pry (>= 0.10.4)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -338,6 +338,8 @@ GEM
     sass (3.4.25)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -391,6 +393,7 @@ GEM
     zeitwerk (2.3.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -411,8 +414,6 @@ DEPENDENCIES
   minitest
   minitest-reporters (= 1.3.8)
   pg
-  pry-byebug
-  pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3)
   rails-controller-testing (= 1.0.4)
