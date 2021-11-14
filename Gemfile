@@ -1,36 +1,44 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'guard-rspec', require: false
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
+  gem 'parallel_tests'
+  gem 'pry'
+  gem 'spring'
+  gem 'byebug'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -39,16 +47,18 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem  'rails-controller-testing' ,  '1.0.4'
-  gem  'minitest'
-  gem  'minitest-reporters' ,        '1.3.8'
-  gem  'guard' ,                     '2.16.2'
-  gem  'guard-minitest' ,            '2.4.6'
+  gem 'guard-rails'
+  gem 'rspec-rails', '~> 4.0.0.beta3'
+  gem 'shoulda', '~> 4.0'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'i18n-tasks'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rspec'
+  gem 'rspec-mocks'
 end
 
 gem 'bootstrap-sass'

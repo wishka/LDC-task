@@ -13,4 +13,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( app.js )
+Rails.application.config.assets.precompile += %w( application.js )
+Rails.application.config.assets.precompile += %w( cart.js )
 Rails.application.config.assets.precompile += %w( jquery-3.5.1.min.js )
+
+# Add node_modules folder to the asset load path.
+Rails.application.config.assets.paths << Rails.root.join("node_modules")
